@@ -1,4 +1,4 @@
-# Antenna-Based Bone Crack Detection Using Ansys HFSS
+# Microwave Bone Crack Detection
 
 ## 1. Project Overview
 
