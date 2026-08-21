@@ -63,7 +63,7 @@ Microwave_Imaging/
 └── README.md
 ```
 
-```
+
 
 ---
 
@@ -95,9 +95,16 @@ Microwave_Imaging/
 
 **Purpose:**
 
-`This design was used to expand the single element and create a wrappable array. The angle of scanning can be adjusted by using RF switches. The proposed switch was HMC1055.`
+`This design was used to expand the single element and create a wrappable array. The angle of scanning can be adjusted by using RF switches. The proposed switch was HMC1055. The figure shows the array with one antenna ON.`
+
+#### E Field with the second antenna ON
 
 ![A GIF of the second antenna in the array being ON with the rest OFF](images/FOURANTENNA.gif)
+
+### Radiation pattern in the same configuration
+
+![Radiation Pattern in the same setup](images/RadPat4x1.png)
+
 ---
 
 ### FR4 dual rotated antennas
@@ -112,6 +119,11 @@ Microwave_Imaging/
 **Purpose:**
 
 `As the design of the 8x1 array failed due to failing matching for the switches, due to time constraints the actually implemented design in hardware were two rotating FR4 antennas pointed at the bone opposed to each other. S11 and S12 parameters were collected from 1.2 to 3.6 GHz for each angle at a resolution of 30 degrees. The results are in the files S11 and S21.csv. At the angles closest to the crack, there was a difference between the intact bone and the bone with a crack in the S11 and S21 parameters.`
+
+#### Antenna Setup
+
+![Antenna Geometry](images/Geometry_Dual_Antenna.png)
+
 
 ---
 
@@ -179,88 +191,29 @@ The crack is modeled as an ellipsoid discontinuity (air gap) inside the bone str
 
 ### Hardware Comparison
 
-The 
+The hardware results also showed a frequency shift in resonance that was not visible in the simulation.
+
+### Result files
+
+The simulation result files are `S11.csv` and `S21.csv` where only the first port was excited. The csv files `results/SingleAntennaCrackDistfromLimb.csv` and `results/SingleAntennaCrackDistfromLimb.csv` were used to generate the above graphs and find an optimal distance from the limb.
 
 ---
 
+## 11. Future Work
 
-### Selected Sensitivity Metric
-
-`[Specify the metric used to determine the best antenna.]`
-
+* Use inverse scattering algorithms for imaging.
+* Match the switches using various approaches for 8x1 array.
+* Hardware implementation on flexible substrate
+* Research phased arrays as an alternative to RF switches.
 ---
 
-## 12. Best Performing Design
-
-**Selected Design:** `[Design XX]`
-
-**Selection Criteria:**
-
-* `[Criterion 1]`
-* `[Criterion 2]`
-* `[Criterion 3]`
-
-**Result:**
-
-`[Briefly describe why this antenna performed best.]`
-
----
-
-## 13. Figures
-
-### Antenna Geometry
-
-![Antenna Geometry](figures/antenna_geometry.png)
-
-### Bone Model
-
-![Bone Model](figures/bone_model.png)
-
-### Cracked Bone Model
-
-![Cracked Bone](figures/cracked_bone.png)
-
-### S11 Comparison
-
-![S11 Comparison](figures/s11_comparison.png)
-
-### Electric Field Distribution
-
-![Electric Field](figures/e_field.png)
-
----
-
-## 14. Future Work
-
-* Test different crack sizes.
-* Test different crack orientations.
-* Test different crack locations.
-* Optimize antenna geometry.
-* Test different operating frequencies.
-* Use realistic anatomical bone models.
-* Include surrounding tissue layers.
-* Perform experimental validation.
-* Develop an automated crack-detection method.
-
----
-
-## 15. References
+## 12. References
 
 1. Ansys HFSS Documentation
-2. `[Reference for antenna design]`
-3. `[Reference for bone/tissue electromagnetic properties]`
-4. `[Reference for electromagnetic bone-crack detection]`
+2. Microwave Engineering - David M. Pozar
+3. [Tissue permittivity reference](https://itis.swiss/virtual-population/tissue-properties/database/dielectric-properties)
+4. [Calculator for patch antennas](https://www.emtalk.com/mpacalc.php)
+5. Kwon S, Lee S. Recent Advances in Microwave Imaging for Breast Cancer Detection. Int J Biomed Imaging. 2016;2016:5054912. doi: 10.1155/2016/5054912. Epub 2016 Dec 21. Erratum in: Int J Biomed Imaging. 2018 May 2;2018:1657073. doi: 10.1155/2018/1657073. PMID: 28096808; PMCID: PMC5210177.
+6. Ruvio G, Cuccaro A, Solimene R, Brancaccio A, Basile B, Ammann MJ. Microwave bone imaging: a preliminary scanning system for proof-of-concept. Healthc Technol Lett. 2016 Jun 30;3(3):218-221. doi: 10.1049/htl.2016.0003. PMID: 27733930; PMCID: PMC5047277.
 
 ---
-
-## 16. Project Status
-
-**Status:** `[In Progress / Simulation Complete / Experimental Validation / Completed]`
-
-**Software:** Ansys HFSS
-
-**Number of Antenna Designs:** `[N]`
-
-**Target Application:** Electromagnetic bone-crack detection
-
-<img width="1276" height="498" alt="FOURANTENNA" src="https://github.com/user-attachments/assets/a029b4dd-d4d4-4195-acea-9a4a2d13707b" />
